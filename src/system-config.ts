@@ -3,7 +3,9 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  '@angular2-material': 'vendor/@angular2-material'
+  '@angular2-material': 'vendor/@angular2-material',
+  'firebase': 'vendor/firebase/lib/firebase-web.js',
+  'angularfire2': 'vendor/angularfire2'
 };
 
 const materialPackages: string[] = [
@@ -30,7 +32,12 @@ function createCustomConfig(packages: string[]): any {
       main: packageName
     };
     return packageConfig;
-  }, {});
+  }, {
+    angularfire2: {
+      defaultExtension: 'js',
+      main: 'angularfire2.js'
+    }
+  });
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////

@@ -1,4 +1,5 @@
 <md-sidenav-layout fullscreen>
+
   <md-sidenav #sidenav>
     <md-nav-list>
       <a md-list-item (click)=sidenav.close()>
@@ -10,6 +11,7 @@
       </a>
     </md-nav-list>
   </md-sidenav>
+
   <md-toolbar color=primary>
     <button md-icon-button (click)=sidenav.open()>
       <md-icon>menu</md-icon>
@@ -18,4 +20,13 @@
     <span class=toolbar-buffer></span>
     <span>&lt; &gt;</span>
   </md-toolbar>
+
+  <button md-icon-buttom (click)="add({id:0,name:'new stck'})">add({})</button>
+
+  <ul>
+    <li *ngFor="let stck of stcks | async">
+      {{stck.id}}: {{stck.name}}
+    </li>
+  </ul>
+
 </md-sidenav-layout>
