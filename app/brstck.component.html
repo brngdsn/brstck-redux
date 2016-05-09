@@ -1,0 +1,49 @@
+<md-sidenav-layout fullscreen>
+
+  <md-sidenav #sidenav>
+    <md-nav-list>
+      <a md-list-item (click)=sidenav.close()>
+        <md-icon md-list-icon>
+          assignment ind
+        </md-icon>
+        <span md-line>My Account</span>
+        <span md-line class=secondary>View my account info</span>
+      </a>
+    </md-nav-list>
+  </md-sidenav>
+
+  <md-toolbar color=primary>
+    <button md-icon-button (click)=sidenav.open()>
+      <md-icon>menu</md-icon>
+    </button>
+    <span>brstck</span>
+    <span class=toolbar-buffer></span>
+    <span>&lt; &gt;</span>
+  </md-toolbar>
+
+  <div class=form #stck>
+    <md-card>
+      <md-card-title>Add a new Stck</md-card-title>
+      <md-card-content>
+        <form>
+          <md-input placeholder="Id" [(ngModel)]=stck.id type=number></md-input>
+          <md-input placeholder="Name" [(ngModel)]=stck.name type=text></md-input>
+        </form>
+      </md-card-content>
+      <md-card-actions align="end">
+        <button md-raised-button 
+          color=accent 
+          (click)="add(stck)"
+          >add
+        </button>
+      </md-card-actions>
+    </md-card>
+  </div>
+
+  <ul>
+    <li *ngFor="let stck of stcks | async">
+      {{stck.id}}: {{stck.name}}
+    </li>
+  </ul>
+
+</md-sidenav-layout>
