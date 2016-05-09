@@ -6,6 +6,8 @@ import {MdIcon, MdIconRegistry} from '@angular2-material/icon';
 import {MD_LIST_DIRECTIVES} from '@angular2-material/list';
 import { AngularFire, FirebaseListObservable } from 'angularfire2';
 import {Stck} from './shared/stck.model';
+import {MD_CARD_DIRECTIVES} from '@angular2-material/card';
+import {MdInput} from '@angular2-material/input';
 
 @Component({
   moduleId: module.id,
@@ -13,6 +15,8 @@ import {Stck} from './shared/stck.model';
   templateUrl: 'brstck.component.html',
   styleUrls: ['brstck.component.css'],
   directives: [
+    MD_CARD_DIRECTIVES,
+    MdInput,
     MdToolbar,
     MD_SIDENAV_DIRECTIVES,
     MdButton,

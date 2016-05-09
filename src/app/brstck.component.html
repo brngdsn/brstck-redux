@@ -21,7 +21,24 @@
     <span>&lt; &gt;</span>
   </md-toolbar>
 
-  <button md-icon-buttom (click)="add({id:0,name:'new stck'})">add({})</button>
+  <div class=form #stck>
+    <md-card>
+      <md-card-title>Add a new Stck</md-card-title>
+      <md-card-content>
+        <form>
+          <md-input placeholder="Id" [(ngModel)]=stck.id type=number></md-input>
+          <md-input placeholder="Name" [(ngModel)]=stck.name type=text></md-input>
+        </form>
+      </md-card-content>
+      <md-card-actions align="end">
+        <button md-raised-button 
+          color=accent 
+          (click)="add(stck)"
+          >add
+        </button>
+      </md-card-actions>
+    </md-card>
+  </div>
 
   <ul>
     <li *ngFor="let stck of stcks | async">
