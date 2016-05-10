@@ -26,7 +26,6 @@
       <md-card-title>Add a new Stck</md-card-title>
       <md-card-content>
         <form>
-          <md-input placeholder="Id" [(ngModel)]=stck.id type=number></md-input>
           <md-input placeholder="Name" [(ngModel)]=stck.name type=text></md-input>
         </form>
       </md-card-content>
@@ -40,10 +39,14 @@
     </md-card>
   </div>
 
-  <ul>
-    <li *ngFor="let stck of stcks | async">
-      {{stck.id}}: {{stck.name}}
-    </li>
-  </ul>
+  <div class="card-container">
+    <md-card *ngFor="let stck of stcks | async">
+      <md-card-title>{{stck.name}}</md-card-title>
+      <md-card-content class="secondary">
+        Very ipsum such dolor amet wow very divs very content concern, very much develop much spans
+        much layer so so scare such spans such padding many beta very layer much excuse.
+      </md-card-content>
+    </md-card>
+  </div>
 
 </md-sidenav-layout>

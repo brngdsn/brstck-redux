@@ -29,9 +29,13 @@ import {MdInput} from '@angular2-material/input';
 })
 export class BrstckAppComponent {
   title = 'brstck works!';
-  stcks: FirebaseListObservable<any>;
+  stcks: FirebaseListObservable<any[]>;
   constructor(af: AngularFire) {
-    this.stcks = af.database.list('/stcks');
+    this.stcks = af.database.list('/stcks', {
+      query: {
+        limitToLast: 3
+      }
+    });
   }
   add(stck: Stck) {
     this.stcks.push(stck);
