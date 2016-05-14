@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+  - "5.11.1"
+install:
+  - true
+before_install:
+  - npm install -g angular-cli typings
+script:
+  - npm install
+  - ng build
+  - ng test
+deploy:
+  provider: script
+  script: scripts/deploy.sh
+  on:
+    branch: master
+  skip_cleanup: true
